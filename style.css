@@ -1,0 +1,84 @@
+/* Smart Chat Search - barra estilo WhatsApp */
+
+#scs_bar {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 6px);
+    left: 8px;
+    right: 8px;
+    z-index: 5000;
+    display: none;
+    align-items: center;
+    gap: 4px;
+    height: 48px;
+    padding: 0 8px;
+    border-radius: 24px;
+    background: var(--SmartThemeBlurTintColor, #1c1c1e);
+    border: 1px solid var(--SmartThemeBorderColor, #444);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(var(--SmartThemeBlurStrength, 10px));
+    color: var(--SmartThemeBodyColor, #eee);
+}
+
+#scs_bar.scs-open {
+    display: flex;
+}
+
+#scs_bar .scs-btn {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0.9;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#scs_bar .scs-btn:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+#scs_bar .scs-btn.scs-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+#scs_input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 36px;
+    margin: 0;
+    padding: 0 6px;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: inherit;
+    font-size: 16px; /* 16px evita el zoom automatico en celular */
+}
+
+#scs_count {
+    flex: 0 0 auto;
+    font-size: 13px;
+    opacity: 0.75;
+    white-space: nowrap;
+    padding: 0 4px;
+}
+
+/* Resaltado en los mensajes */
+mark.scs-hl {
+    background: #ff4fa3;
+    color: #fff;
+    border-radius: 3px;
+    padding: 0 1px;
+}
+
+mark.scs-hl.scs-current {
+    background: #ffd60a;
+    color: #000;
+    outline: 2px solid #ff9f1c;
+}
